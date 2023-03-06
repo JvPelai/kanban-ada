@@ -1,12 +1,13 @@
 import { Router } from 'express';
+import { CardController } from '../controllers/CardController';
 
 const router = Router();
 
-router.post('/login', UserController.create);
-router.post('/users/auth', UserController.auth);
-router.get('/cards', UserController.getUserTodoItems);
 router.post('/cards', CardController.create);
 router.put('/cards/:id', CardController.update);
-router.delete('/cards/:id', CardController.delete);
+router.post('/login');
+router.post('/users/auth');
+router.get('/cards');
+router.delete('/cards/:id');
 
 export { router };

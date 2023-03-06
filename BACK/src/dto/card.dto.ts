@@ -1,7 +1,15 @@
+import { IsString } from "class-validator";
+
 class CardDTO {
     id?: string;
+
+    @IsString()
     titulo: string;
+
+    @IsString()
     conteudo: string;
+    
+    @IsString()
     lista: string;
     
     private constructor() {}

@@ -1,10 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, useContainer, UpdateDateColumn } from "typeorm"
 
 @Entity()
 export class Card {
 
     @PrimaryGeneratedColumn()
-    id: number
+    id: string
 
     @Column()
     titulo: string
@@ -13,6 +13,12 @@ export class Card {
     conteudo: string
 
     @Column()
-    lista: number
+    lista: string
+
+    @CreateDateColumn()
+    created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date;
 
 }
