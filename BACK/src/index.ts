@@ -1,9 +1,10 @@
 import { AppDataSource } from "./data-source"
 import express from 'express';
-import { User } from "./entity/User"
+import * as dotenv from 'dotenv';
 import { router } from "./routes";
 import cors from 'cors'
-
+dotenv.config();
+export const jwtSecretKey = process.env.JWT_SECRET;
 AppDataSource.initialize().then(async () => {
 
     console.log("Here you can setup and run express / fastify / any other framework.")

@@ -11,7 +11,7 @@ class CardService {
         card.titulo = data.titulo;
         try {
 
-            const newCard = await AppDataSource.manager.save(card)
+            await AppDataSource.manager.save(card)
             return true
         } catch (err){
             console.log(err)
@@ -27,8 +27,20 @@ class CardService {
         card.titulo = data.titulo;
         try {
 
-            const newCard = await AppDataSource.manager.save(card)
+            await AppDataSource.manager.save(card)
             return true
+        } catch (err){
+            console.log(err)
+            return null
+        }
+        
+    }
+
+    static async getCards(): Promise<Card[] | null> {
+        try {
+            const cards = await AppDataSource.manager.find(Card)
+            console.log(cards)
+            return cards
         } catch (err){
             console.log(err)
             return null

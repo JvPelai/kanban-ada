@@ -38,6 +38,16 @@ class CardController {
             return response.status(500).json(err);
         }
     }
+
+    static async get(request: Request, response: Response): Promise<Response> {
+        try {
+            const result = await CardService.getCards()
+            return response.status(201).json(result)
+        } catch (err) {
+            console.log(err)
+            return response.status(500).json(err);
+        }
+    }
 }
 
 export { CardController}
