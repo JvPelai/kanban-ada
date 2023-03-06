@@ -51,7 +51,6 @@ const authenticateUser = async (authData): Promise<any | null> => {
       if (!passwordMatch) {
         return null;
       }
-      console.log(jwtSecretKey)
   
       const token = sign(
         {
@@ -64,7 +63,6 @@ const authenticateUser = async (authData): Promise<any | null> => {
           expiresIn: '1d'
         }
       );
-      console.log(token)
       return token;
     } catch (error) {
       throw new Error(error);
