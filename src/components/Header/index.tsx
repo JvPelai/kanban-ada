@@ -14,7 +14,7 @@ export const Header: React.FC = () => {
         </div>
         <div className="flex lg:hidden"></div>
 
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="lg:flex lg:flex-1 lg:justify-end">
           <a
             href="/login"
             className="text-sm font-semibold leading-6 text-white"

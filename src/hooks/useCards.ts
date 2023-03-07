@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import axios from 'axios';
-import { useAuth } from './useAuth';
 
 export interface UseCards {
   fetchCards: () => Promise<ICard[] | null>;
@@ -15,8 +14,7 @@ export interface ICard {
   lista: string;
 }
 const useCards = (): UseCards => {
-  const context = useAuth();
-  const { authToken } = context;
+  const authToken = localStorage.getItem('token');
   console.log(authToken);
   const fetchCards = async (): Promise<ICard[] | null> => {
     const instance = axios.create({
