@@ -41,7 +41,7 @@ export const Login: React.FC = () => {
                 <input
                   id="login"
                   name="login"
-                  type="email"
+                  type="name"
                   value={login}
                   onChange={(e) => {
                     setLogin(e.target.value);
